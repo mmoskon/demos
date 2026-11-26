@@ -1,0 +1,20 @@
+// protein expression
+exp_A: -> A; alpha/(1 + (C/Kd)^n) + alpha0*alpha 
+exp_B: -> B; alpha/(1 + (A/Kd)^n) + alpha0*alpha
+exp_C: -> C; alpha/(1 + (B/Kd)^n) + alpha0*alpha
+
+// protein degradation
+deg_A: A -> ; delta * A
+deg_B: B -> ; delta * B 
+deg_C: C -> ; delta * C
+
+
+// parameter values
+alpha = 100
+alpha0 = 0.01
+Kd = 10
+delta = 1
+n = 2
+
+// initial conditions
+A=5; B=0; C=0

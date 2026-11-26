@@ -1,0 +1,37 @@
+// mRNA transcription
+tr_a: -> a; alpha/(1 + (C/Kd)^n) 
+tr_b: -> b; alpha/(1 + (A/Kd)^n)
+tr_c: -> c; alpha/(1 + (B/Kd)^n)
+
+// mRNA basal transcription
+tr_a_leak: -> a; alpha0*alpha
+tr_b_leak: -> b; alpha0*alpha
+tr_c_leak: -> c; alpha0*alpha
+
+// mRNA degradation
+deg_a: a -> ; delta_m * a
+deg_b: b -> ; delta_m * b 
+deg_c: c -> ; delta_m * c
+
+// protein translation
+tl_a: a -> a + A; beta * a
+tl_b: b -> b + B; beta * b
+tl_c: c -> c + C; beta * c
+
+// protein degradation
+deg_A: A -> ; delta * A
+deg_B: B -> ; delta * B
+deg_C: C -> ; delta * C
+
+// parameter values
+alpha = 100
+alpha0 = 0.01
+beta = 1
+Kd = 10
+delta = 1
+delta_m = 1
+n = 2
+
+// initial conditions
+a=10; b=0; c=0
+A=5; B=0; C=0
